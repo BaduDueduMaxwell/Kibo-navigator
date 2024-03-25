@@ -1,10 +1,11 @@
 import React from "react";
 import Login from "./Component/Login";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <>
-      <Login />
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+    </Routes>
   );
 }
