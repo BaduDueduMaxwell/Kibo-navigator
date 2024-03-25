@@ -3,17 +3,20 @@ import React from "react";
 function Login() {
   return (
     <div className="flex h-screen overflow-hidden">
-      <div className="w-1/2 bg-white-300 flex items-center justify-center">
+      {/* Use a hidden class for smaller screens */}
+      <div className="hidden lg:block w-1/2 bg-white-300 flex items-center justify-center">
         <img
           src="https://lms.kibo.school/images/loginBackgroundImage.png"
           alt="login__image"
           width="100%"
         />
       </div>
-      <div className="w-1/2  flex items-center justify-center">
-        <div className="w-full">
-          <form className="rounded px-40 pt-6 pb-8">
+
+      <div className="w-full lg:w-1/2 flex items-center justify-center m-5">
+        <div className="w-full max-w-md lg:mx-auto">
+          <form className="rounded lg: pt-6 pb-8">
             <h1 className="text-2xl font-extrabold pb-6">KiboNavigator</h1>
+
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
