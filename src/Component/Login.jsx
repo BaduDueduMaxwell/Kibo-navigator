@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react"; // Import useState for login state
+import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Login state
+
+  const handleLogin = () => {
+    console.log("Simulating Login...");
+    setIsLoggedIn(true);
+    navigate('/Payment')
+  };
+
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Use a hidden class for smaller screens */}
       <div className="hidden lg:block w-1/2 bg-white-300 flex items-center justify-center">
-        <img
-          src="https://lms.kibo.school/images/loginBackgroundImage.png"
-          alt="login__image"
-          width="100%"
-        />
+        <img src="src/assets/images/kibo-bg.png" alt="login__image" width="100%" />
       </div>
 
       <div className="w-full lg:w-1/2 flex items-center justify-center m-5">
@@ -51,7 +57,7 @@ function Login() {
             <div className="flex items-center justify-between">
               <button
                 className="bg-cyan-600 hover:bg-cyan-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
+                onClick={handleLogin} // Call handleLogin on click
               >
                 Sign In
               </button>
@@ -65,6 +71,9 @@ function Login() {
           </form>
         </div>
       </div>
+      {isLoggedIn && (
+        <redirect to="Payment" /> // Render Payment component conditionally
+      )}
     </div>
   );
 }
