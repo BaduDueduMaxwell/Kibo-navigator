@@ -9,7 +9,7 @@ function Login() {
   const handleLogin = () => {
     console.log("Simulating Login...");
     setIsLoggedIn(true);
-    navigate('/Payment')
+    navigate('/Home')
   };
 
   return (
@@ -72,7 +72,7 @@ function Login() {
         </div>
       </div>
       {isLoggedIn && (
-        <redirect to="Payment" /> // Render Payment component conditionally
+        <redirect to="Home" /> // Render Payment component conditionally
       )}
     </div>
   );
